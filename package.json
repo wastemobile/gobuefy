@@ -1,0 +1,34 @@
+{
+  "name": "gobuefy",
+  "version": "0.1.0",
+  "description": "Hugo with Buefy through gulp & Hugo Pipes",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wastemobile/gobuefy.git"
+  },
+  "keywords": [
+    "hugo",
+    "buefy",
+    "bulma",
+    "vue"
+  ],
+  "author": "wastemobile",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wastemobile/gobuefy/issues"
+  },
+  "homepage": "https://github.com/wastemobile/gobuefy#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "buefy": "^0.8.4",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-rename": "^1.4.0",
+    "merge-stream": "^2.0.0",
+    "vue": "^2.6.10"
+  }
+}
