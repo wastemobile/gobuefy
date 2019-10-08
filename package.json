@@ -25,10 +25,12 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",
     "buefy": "^0.8.4",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-rename": "^1.4.0",
-    "merge-stream": "^2.0.0",
-    "vue": "^2.6.10"
+    "merge-stream": "^2.0.0"
   }
 }

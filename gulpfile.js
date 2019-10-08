@@ -20,15 +20,17 @@ function modules() {
 		.pipe(gulp.dest('./assets/vendor/bulma/sass'));
 	var bulma = gulp.src('./node_modules/bulma/bulma.sass')
 		.pipe(gulp.dest('./assets/vendor/bulma'));
+	var buefy = gulp.src('./node_modules/buefy/src/**/*')
+		.pipe(gulp.dest('./assets/vendor/buefy'));
+	var buefyJs = gulp.src('./node_modules/buefy/dist/buefy.min.js')
+		.pipe(gulp.dest('./static/vendor/buefy'));
+	var vue = gulp.src('./node_modules/vue/dist/vue.min.js')
+		.pipe(gulp.dest('./static/vendor/vue'));
 	var fontAwesome = gulp.src('./node_modules/@fortawesome/**/*')
 		.pipe(gulp.dest('./static/vendor'));
-	var jquery = gulp.src([
-			'./node_modules/jquery/dist/*',
-			'!./node_modules/jquery/dist/core.js'
-		])
-		.pipe(gulp.dest('./static/vendor/jquery'))
+	
 
-	return merge(bulmaSass, bulma, fontAwesome, jquery);
+	return merge(bulmaSass, bulma, buefy, buefyJs, vue, fontAwesome);
 }
 
 // Define complex tasks

@@ -1,7 +1,7 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-isCJKLanguage: yes
+isCJKLanguage: true
 draft: true
 ---
 

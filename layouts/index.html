@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+    {{ hugo.Generator }}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ block "title" . }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+
+    {{ with .Description }}
+    	<meta name="description" content="{{ . }}">
+    {{ end }} 
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:400|Noto+Serif+TC:900&display=swap&subset=chinese-traditional" rel="stylesheet">
+    <link rel="stylesheet" href="/vendor/fontawesome-free/css/all.min.css">
+
+	{{ $style := resources.Get "style.scss" | toCSS | minify | fingerprint "md5" }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+</head>
+<!--theme variation-->
+
+<body>
+    <section class="section" id="buttonApp">
+        <div class="container">
+            <h1 class="title">Section</h1>
+            <h2 class="subtitle">Simple Buefy Template</h2>
+            <b-dropdown aria-role="list">
+                <button class="button is-primary" slot="trigger">
+                    <span>Click me!</span>
+                    <b-icon icon="menu-down"></b-icon>
+                </button>
+
+                <b-dropdown-item aria-role="listitem">Action</b-dropdown-item>
+                <b-dropdown-item aria-role="listitem">Another action</b-dropdown-item>
+                <b-dropdown-item aria-role="listitem">Something else</b-dropdown-item>
+            </b-dropdown>
+        </div>
+    </section>
+    <section class="section" id="app2">
+        <div class="container">
+            <b-collapse :open="false" aria-id="contentIdForA11y1">
+                <button
+                    class="button is-primary"
+                    slot="trigger"
+                    aria-controls="contentIdForA11y1">Click me!</button>
+                <div class="notification">
+                    <div class="content">
+                        <h3>
+                            Subtitle
+                        </h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br/>
+                            Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. <br/>
+                            Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.
+                        </p>
+                    </div>
+                </div>
+            </b-collapse>
+        </div>
+    </section>
+
+    <script src="/vendor/vue/vue.min.js"></script>
+    <script src="/vendor/buefy/buefy.min.js"></script>
+    <script>
+        Vue.use(Buefy, {
+            defaultIconPack: 'fas',
+        });
+        new Vue({
+            el: '#buttonApp',
+            methods: {
+                clickMe() {
+                    this.$buefy.notification.open('Clicked!!')
+                }
+            },
+            defaultIconPack: 'fas'
+        });
+        new Vue({
+            el: '#app2'
+        })
+    </script>
+</body>
+</html>
