@@ -1,0 +1,54 @@
+{{ define "header" }}
+
+<section class="hero is-danger">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-8-desktop is-offset-2-desktop">
+          <h1 class="title is-2 is-spaced">
+            {{ .Title }}
+          </h1>
+          <h2 class="subtitle is-4">
+              {{ .Summary }}
+          </h2>
+          <p><span class="tag is-black">/blog/section.html</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}
+
+{{ define "main" }}
+
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8-desktop is-offset-2-desktop">
+        <div class="content">
+          {{ .Content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8-desktop is-offset-2-desktop">
+        {{ range first 10 (where .Pages "Section" "blog") }}
+            <h2 class="title">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h2>
+            <h3 class="content">
+                {{ .Summary }}
+            </h3>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+	
+{{ end }}

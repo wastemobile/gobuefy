@@ -1,0 +1,37 @@
+{{ define "header" }}
+
+<section class="hero is-warning">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-8-desktop is-offset-2-desktop">
+          <h1 class="title is-2 is-spaced">
+            {{ .Title }}
+          </h1>
+          <h2 class="subtitle is-4">
+              {{ .Summary }}
+          </h2>
+          <p><span class="tag is-black">/_default/section.html</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}
+
+{{ define "main" }}
+
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8-desktop is-offset-2-desktop">
+        <div class="content">
+          {{ .Content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+	
+{{ end }}
